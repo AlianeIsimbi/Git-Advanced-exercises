@@ -427,3 +427,115 @@ $ git rebase --continue
 Successfully rebased and updated refs/heads/main.
 
 ```
+### Challenge 5
+#### Squashed the two commits from the previous challenge and solved some conflicts from the readme file
+
+```
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main)
+$ git rebase -i HEAD~5
+interactive rebase in progress; onto 3b16111
+Last commands done (5 commands done):
+   pick 17eddf1 chore:Creat third and forth files # empty
+   squash a4a2940 chore:Creat third and forth files
+  (see more in file .git/rebase-merge/done)
+Next commands to do (7 remaining commands):
+   pick 746382e Updated the readme file
+   pick 2bd2827 Updated the readme file
+  (use "git rebase --edit-todo" to view and edit)
+You are currently rebasing branch 'main' on '3b16111'.
+  (all conflicts fixed: run "git rebase --continue")
+
+No changes
+You asked to amend the most recent commit, but doing so would make
+it empty. You can repeat your command with --allow-empty, or you can
+remove the commit entirely with "git reset HEAD^".
+Could not apply a4a2940... chore:Creat third and forth files
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main|REBASE 5/12)
+$ git rebase --continue
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+error: could not apply 746382e... Updated the readme file
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+hint: Disable this message with "git config advice.mergeConflict false"
+Could not apply 746382e... Updated the readme file
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main|REBASE 6/12)
+$ git rebase --skip
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+error: could not apply 2bd2827... Updated the readme file
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+hint: Disable this message with "git config advice.mergeConflict false"
+Could not apply 2bd2827... Updated the readme file
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main|REBASE 7/12)
+$ git rebase --continue
+README.md: needs merge
+You must edit all merge conflicts and then
+mark them as resolved using git add
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main|REBASE 7/12)
+$ git add README.md 
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main|REBASE 7/12)
+$ git rebase --continue
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+error: could not apply 6ce16d7... Updated the readme file
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main|REBASE 7/12)
+$ git rebase --continue
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+error: could not apply 6ce16d7... Updated the readme file
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+error: could not apply 6ce16d7... Updated the readme file
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+CONFLICT (content): Merge conflict in README.md
+error: could not apply 6ce16d7... Updated the readme file
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+error: could not apply 6ce16d7... Updated the readme file
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+hint: Disable this message with "git config advice.mergeConflict false"
+Could not apply 6ce16d7... Updated the readme file
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main|REBASE 8/12)
+$ git rebase --continue
+interactive rebase in progress; onto 3b16111
+Last commands done (9 commands done):
+   pick 6ce16d7 Updated the readme file
+   pick 9a0b926 chore: Create initial file
+  (see more in file .git/rebase-merge/done)
+Next commands to do (3 remaining commands):
+   pick c58ff27 chore: Create second file
+   pick e582244 chore:Creat third and forth files
+  (use "git rebase --edit-todo" to view and edit)
+You are currently rebasing branch 'main' on '3b16111'.
+  (all conflicts fixed: run "git rebase --continue")
+
+nothing to commit, working tree clean
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git rebase --skip'
+Could not apply 9a0b926... chore: Create initial file
+```
