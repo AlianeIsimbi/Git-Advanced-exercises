@@ -187,6 +187,7 @@ Date:   Thu Jul 24 10:45:09 2025 +0200
 
     Initial commit
 ```
+<<<<<<< HEAD
 
 ## Part-1
 ### Challenge 1
