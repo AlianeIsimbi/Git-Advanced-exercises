@@ -187,3 +187,15 @@ Date:   Thu Jul 24 10:45:09 2025 +0200
 
     Initial commit
 ```
+### Challenge 3
+#### Did git rebase and changed pick to squash in the text editor in order to squash the "create second file" with "create initial file"
+```
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main)
+$ git rebase -i HEAD~4
+[detached HEAD 3018fb3] chore: Create initial file
+ Date: Thu Jul 24 10:48:46 2025 +0200
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test1.md
+ create mode 100644 test2.md
+Successfully rebased and updated refs/heads/main.
+```
