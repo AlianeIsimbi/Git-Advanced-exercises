@@ -539,3 +539,38 @@ If you wish to commit it anyway, use:
 Otherwise, please use 'git rebase --skip'
 Could not apply 9a0b926... chore: Create initial file
 ```
+### Challenge 6
+#### Removed a commit by changin the pick to drop in the text editor
+
+```
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main)
+$ git add unwanted.txt
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main)
+$ git commit -m "Unwanted commit"
+[main a3f9a60] Unwanted commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 unwanted.txt
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main)
+$ git rebase -i Head~2
+interactive rebase in progress; onto 2921932
+Last command done (1 command done):
+   pick a4a2940 chore:Creat third and forth files
+Next commands to do (8 remaining commands):
+   pick 746382e Updated the readme file
+   pick 2bd2827 Updated the readme file
+  (use "git rebase --edit-todo" to view and edit)
+You are currently rebasing branch 'main' on '2921932'.
+  (all conflicts fixed: run "git rebase --continue")
+
+nothing to commit, working tree clean
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git rebase --skip'
+Could not apply a4a2940... chore:Creat third and forth files
+
+```
