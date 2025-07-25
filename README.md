@@ -199,3 +199,42 @@ $ git rebase -i HEAD~4
  create mode 100644 test2.md
 Successfully rebased and updated refs/heads/main.
 ```
+### Challenge 4
+#### splitted one commit by replacing pick with edit then using git reset to change the commit into two
+```
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main)
+$ git rebase -i HEAD~4
+Stopped at a4a2940...  chore:Creat third and forth files
+You can amend the commit now, with
+
+  git commit --amend
+
+Once you are satisfied with your changes, run
+
+  git rebase --continue
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main|REBASE 2/4)
+$ git reset HEAD~1
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main|REBASE 2/4)
+$ git add test3.md
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main|REBASE 2/4)
+$ git commit -m "chore:Create third file"
+[detached HEAD d8c5916] chore:Create third file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test3.md
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main|REBASE 2/4)
+$ git add test4.md
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main|REBASE 2/4)
+$ git commit -m "chore:Create forth file"
+[detached HEAD 7e72d17] chore:Create forth file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test4.md
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main|REBASE 2/4)
+$ git rebase --continue
+Successfully rebased and updated refs/heads/main.
+
+```
