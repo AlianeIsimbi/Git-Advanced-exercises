@@ -575,3 +575,16 @@ Otherwise, please use 'git rebase --skip'
 Could not apply a4a2940... chore:Creat third and forth files
 
 ```
+### Challenge 7
+#### Re-arranged the commit order in the text editor
+```
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main)
+$ git rebase -i Head~3
+Successfully rebased and updated refs/heads/main.
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main)
+$ git rebase --continue
+fatal: no rebase in progress
+
+```
+
