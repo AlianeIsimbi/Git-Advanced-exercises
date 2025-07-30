@@ -587,4 +587,33 @@ $ git rebase --continue
 fatal: no rebase in progress
 
 ```
+### Challenge 8
+#### Creaated a new branch then added a new file, later switched back and cherry-picked the branch using the command
 
+```
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main)
+$ git checkout -b ft/branch
+Switched to a new branch 'ft/branch'
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (ft/branch)
+$ git add .
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (ft/branch)
+$ git commit -m "Implemented test5"
+[ft/branch 0cf2824] Implemented test5
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test5,md
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (ft/branch)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main)
+$ git cherry-pick ft/branch
+[main 8993826] Implemented test5
+ Date: Wed Jul 30 14:57:11 2025 +0200
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test5,md
+
+```
