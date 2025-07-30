@@ -617,3 +617,59 @@ $ git cherry-pick ft/branch
  create mode 100644 test5,md
 
 ```
+### Challenge 9
+#### Visualizing the commit history
+```
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main)
+$ git log --graph --oneline --all
+* 900f63b (HEAD -> main, origin/main, origin/HEAD) Updated readme file
+* 8993826 Implemented test5
+| * 0cf2824 (ft/branch) Implemented test5
+|/
+*   3948dab Merge branch 'main' of https://github.com/AlianeIsimbi/Git-Advanced-exercises
+|\
+| *   6d1dc42 Merge branch 'main' of https://github.com/AlianeIsimbi/Git-Advanced-exercises
+| |\  
+| | *   923cde0 Merge branch 'main' of https://github.com/AlianeIsimbi/Git-Advanced-exercises
+| | |\
+| | | *   f1fcfae Merge branch 'main' of https://github.com/AlianeIsimbi/Git-Advanced-exercises
+| | | |\
+| | | | *   d32b7f2 Updated readme file
+| | | | |\  
+| | | | | * 6a2a03f Updated the readme file
+| | | | | * e582244 chore:Creat third and forth files
+| | | | | * c58ff27 chore: Create second file
+| | | | | * 9a0b926 chore: Create initial file
+| | | | * | 6ce16d7 Updated the readme file
+| | | | * | 2bd2827 Updated the readme file
+| | | | * | 746382e Updated the readme file
+:
+```
+### Challenge 10
+#### Checking reflog
+```
+brian@AlianeI23 MINGW64 ~/Git-Advanced-exercises (main)
+$ git reflog
+900f63b (HEAD -> main, origin/main, origin/HEAD) HEAD@{0}: commit: Updated readme file
+8993826 HEAD@{1}: cherry-pick: Implemented test5
+3948dab HEAD@{2}: checkout: moving from ft/branch to main
+0cf2824 (ft/branch) HEAD@{3}: commit: Implemented test5
+3948dab HEAD@{4}: checkout: moving from main to ft/branch
+3948dab HEAD@{5}: pull: Merge made by the 'ort' strategy.
+63fb27e HEAD@{6}: commit: Updated readme file
+0d82409 HEAD@{7}: rebase (finish): returning to refs/heads/main
+0d82409 HEAD@{8}: rebase (pick): chore:Creat third and forth files
+2b7dc02 HEAD@{9}: rebase (pick): Updated the readme file
+7dbb513 HEAD@{10}: rebase (start): checkout Head~3
+c00d226 HEAD@{11}: rebase (finish): returning to refs/heads/main
+c00d226 HEAD@{12}: rebase (continue): Updated the readme file
+8ba1ba5 HEAD@{13}: commit (rebase): chore:Creat third and forth files
+7dbb513 HEAD@{14}: commit (rebase): chore: Create second file
+eba3591 HEAD@{15}: commit (rebase): chore: Create initial file
+e4453c3 HEAD@{16}: rebase (continue): Updated the readme file
+33f39dd HEAD@{17}: commit: Updated the readme file
+2921932 HEAD@{18}: rebase (start): checkout Head~2
+a3f9a60 HEAD@{19}: commit: Unwanted commit
+6d1dc42 HEAD@{20}: pull: Merge made by the 'ort' strategy.
+:
+```
